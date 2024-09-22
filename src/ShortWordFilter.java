@@ -1,41 +1,9 @@
-import java.util.ArrayList;
 public class ShortWordFilter implements Filter
 {
-    private String shortWord;
 
-
-    public ShortWordFilter(String shortWord)
-    {
-        this.shortWord = shortWord;
-    }
-
-    public ShortWordFilter() {
-
-    }
-
-    public static  ArrayList<Object> shortWords(ArrayList<Object> inputString, Filter filter)
-    {
-        ArrayList<Object> shortwords = new ArrayList<>();
-        for (Object word : inputString)
-        {
-            if (filter.accept(word)) shortwords.add(word);
-        }
-        return shortwords;
-    }
-
-    public String getShortWord()
-    {
-        return shortWord;
-    }
-
-    public void setShortWord(String shortWord)
-    {
-        this.shortWord = shortWord;
-    }
-
-    @Override
-    public boolean accept(Object x) {
-        if (((String) x).length() < 5)
+    //Checks whether the size of the word is under 5
+    public static boolean shortWordFilter(String wordLength){
+        if(wordLength.length() <= 5)
         {
             return true;
         }
@@ -43,5 +11,18 @@ public class ShortWordFilter implements Filter
         {
             return false;
         }
+    }
+
+    //This  will save all the words that pass the shortWordFilter into a toString format
+    public static String allShortWord(String items)
+    {
+        String result = "";
+        result = items.toString();
+        return result;
+    }
+
+    @Override
+    public boolean accept(Object x) {
+        return shortWordFilter(x.toString());
     }
 }
