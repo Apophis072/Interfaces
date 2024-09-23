@@ -1,0 +1,6 @@
+Cat
+Dog
+Human
+Dinosaurs
+Birds
+Turtle
