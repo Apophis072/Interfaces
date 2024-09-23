@@ -11,7 +11,8 @@ public class BigRectangleFilter implements Filter
         }
     }
     @Override
-    public boolean accept(Object x) {
+    public boolean accept(Object x)
+    {
         return bigRectangleFilter((Double) x);
     }
 }

@@ -18,10 +18,10 @@ public class BigRectLister
 
             length = SafeInput.getDouble(in, "Enter the length of the rectangle");
             width = SafeInput.getDouble(in, "Enter the width of the rectangle");
-            double permimeter = length * width;
+            double permimeter = 2*length + 2 * width;
             perimeter.add(permimeter);
 
-            done = SafeInput.getYNConfirm(in, "Is there anymore rectangles?");
+            done = SafeInput.getYNConfirm(in, "Is this all the rectangles?");
 
         } while (!done);
 
